@@ -1,0 +1,9 @@
+server:
+  port: 7000
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/project00?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC
+    username: project00
+    password: project00
