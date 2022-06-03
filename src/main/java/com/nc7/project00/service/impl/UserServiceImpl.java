@@ -3,6 +3,7 @@ package com.nc7.project00.service.impl;
 import com.nc7.project00.entity.User;
 import com.nc7.project00.mapper.UserMapper;
 import com.nc7.project00.service.UserService;
+import com.nc7.project00.vo.UserVo;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -21,5 +22,10 @@ public class UserServiceImpl implements UserService {
             user.setId(String.valueOf(UUID.randomUUID()));
         }
         return userMapper.branchAdd(params);
+    }
+
+    @Override
+    public UserVo getUserById(String id) {
+        return userMapper.getUserById(id);
     }
 }

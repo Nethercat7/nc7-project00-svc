@@ -11,4 +11,9 @@
             (#{user.id},#{user.username},#{user.password},#{user.email},#{user.phone})
         </foreach>
     </insert>
+
+    <select id="getUserById" parameterType="java.lang.String" resultType="com.nc7.project00.vo.UserVo">
+        SELECT id,username,email,phone,status FROM p00_users
+        WHERE id=#{id}
+    </select>
 </mapper>

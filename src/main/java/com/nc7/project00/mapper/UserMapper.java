@@ -1,6 +1,7 @@
 package com.nc7.project00.mapper;
 
 import com.nc7.project00.entity.User;
+import com.nc7.project00.vo.UserVo;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -15,4 +16,11 @@ public interface UserMapper {
      * @return 成功插入数据库的数量
      */
     int branchAdd(@RequestParam("params") List<User> params);
+
+    /**
+     * 通过ID查询用户
+     * @param id 用户ID
+     * @return UserVo
+     */
+    UserVo getUserById(@RequestParam("id") String id);
 }
