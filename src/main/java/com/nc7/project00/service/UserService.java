@@ -2,7 +2,6 @@ package com.nc7.project00.service;
 
 import com.nc7.project00.entity.User;
 import com.nc7.project00.vo.UserVo;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -21,5 +20,5 @@ public interface UserService {
      * @param id 用户ID
      * @return UserVo
      */
-    UserVo getUserById(@RequestParam("id") String id);
+    UserVo getUserById(String id);
 }
