@@ -7,3 +7,10 @@ spring:
     url: jdbc:mysql://localhost:3306/project00?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC
     username: project00
     password: project00
+
+mybatis:
+  type-aliases-package: ocm.nc7.project00.entity
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
