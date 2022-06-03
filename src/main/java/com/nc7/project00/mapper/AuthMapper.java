@@ -1,7 +1,7 @@
 package com.nc7.project00.mapper;
 
 import com.nc7.project00.vo.AuthVo;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.apache.ibatis.annotations.Param;
 
 public interface AuthMapper {
     /**
@@ -10,5 +10,5 @@ public interface AuthMapper {
      * @param credential 用户名|电子邮箱|手机号码
      * @return AuthVo
      */
-    AuthVo getUserAuthInfo(@RequestParam("credential") String credential);
+    AuthVo getUserAuthInfo(@Param("credential") String credential);
 }

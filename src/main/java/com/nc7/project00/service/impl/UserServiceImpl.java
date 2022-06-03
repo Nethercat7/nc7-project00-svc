@@ -28,4 +28,9 @@ public class UserServiceImpl implements UserService {
     public UserVo getUserById(String id) {
         return userMapper.getUserById(id);
     }
+
+    @Override
+    public UserVo getUserByCredential(String credential) {
+        return userMapper.getUserByCredential(credential);
+    }
 }

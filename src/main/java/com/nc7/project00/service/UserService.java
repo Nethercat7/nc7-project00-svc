@@ -21,4 +21,11 @@ public interface UserService {
      * @return UserVo
      */
     UserVo getUserById(String id);
+
+    /**
+     * 通过用户名|电子邮箱|手机号码查询用户
+     * @param credential 用户名|电子邮箱|手机号码
+     * @return UserVo
+     */
+    UserVo getUserByCredential(String credential);
 }
