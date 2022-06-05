@@ -20,7 +20,7 @@ public class TagController {
     public WebResponse addTag(@RequestBody Tag params) {
         int status = tagService.add(params);
         if (status > 0) {
-            return new WebResponse(200, "成功添加标签");
+            return new WebResponse(200, "添加标签成功");
         } else {
             return new WebResponse(500, "添加标签失败");
         }

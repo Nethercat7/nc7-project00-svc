@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.nc7.project00.mapper.BillMapper">
+    <insert id="add" parameterType="com.nc7.project00.entity.Bill">
+        INSERT INTO p00_bills(id, tag, amount, add_username, bill_date)
+        VALUES (#{params.id}, #{params.tag}, #{params.amount}, #{params.addUsername}, #{params.billDate})
+    </insert>
+</mapper>
