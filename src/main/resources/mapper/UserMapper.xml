@@ -12,13 +12,13 @@
         </foreach>
     </insert>
 
-    <select id="getUserById" parameterType="java.lang.String" resultType="com.nc7.project00.vo.UserVo">
+    <select id="getUserById" parameterType="java.lang.String" resultType="com.nc7.project00.vo.UserVO">
         SELECT id, username, email, phone, status
         FROM p00_users
         WHERE id = #{id}
     </select>
 
-    <select id="getUserByCredential" parameterType="java.lang.String" resultType="com.nc7.project00.vo.UserVo">
+    <select id="getUserByCredential" parameterType="java.lang.String" resultType="com.nc7.project00.vo.UserVO">
         SELECT id, username, email, phone, status
         FROM p00_users
         WHERE (username = #{credential} or email = #{credential} or phone = #{credential})

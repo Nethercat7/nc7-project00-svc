@@ -1,6 +1,6 @@
 package com.nc7.project00.mapper;
 
-import com.nc7.project00.vo.AuthVo;
+import com.nc7.project00.vo.AuthVO;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -12,5 +12,5 @@ public interface AuthMapper {
      * @param credential 用户名|电子邮箱|手机号码
      * @return AuthVo
      */
-    AuthVo getUserAuthInfo(@Param("credential") String credential);
+    AuthVO getUserAuthInfo(@Param("credential") String credential);
 }

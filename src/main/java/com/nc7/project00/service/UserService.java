@@ -1,7 +1,7 @@
 package com.nc7.project00.service;
 
 import com.nc7.project00.entity.User;
-import com.nc7.project00.vo.UserVo;
+import com.nc7.project00.vo.UserVO;
 
 import java.util.List;
 
@@ -20,12 +20,12 @@ public interface UserService {
      * @param id 用户ID
      * @return UserVo
      */
-    UserVo getUserById(String id);
+    UserVO getUserById(String id);
 
     /**
      * 通过用户名|电子邮箱|手机号码查询用户
      * @param credential 用户名|电子邮箱|手机号码
      * @return UserVo
      */
-    UserVo getUserByCredential(String credential);
+    UserVO getUserByCredential(String credential);
 }

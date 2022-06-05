@@ -22,4 +22,9 @@ public class BillController {
             return new WebResponse(500,"添加账单失败");
         }
     }
+
+    @GetMapping("/{username}/{range}/{type}")
+    public WebResponse getBill(@PathVariable String username, @PathVariable String range, @PathVariable String type) {
+        return new WebResponse(200,billService.getBillStats(username,range,type));
+    }
 }

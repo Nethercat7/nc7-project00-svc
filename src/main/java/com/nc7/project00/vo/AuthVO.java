@@ -1,6 +1,6 @@
 package com.nc7.project00.vo;
 
-public class AuthVo {
+public class AuthVO {
     private String password;
     private String salt;
 

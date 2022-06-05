@@ -5,7 +5,7 @@
 
 <mapper namespace="com.nc7.project00.mapper.AuthMapper">
 
-    <select id="getUserAuthInfo" parameterType="java.lang.String" resultType="com.nc7.project00.vo.AuthVo">
+    <select id="getUserAuthInfo" parameterType="java.lang.String" resultType="com.nc7.project00.vo.AuthVO">
         SELECT password,salt FROM p00_users
         WHERE (username=#{credential} or email=#{credential} or phone=#{credential})
     </select>

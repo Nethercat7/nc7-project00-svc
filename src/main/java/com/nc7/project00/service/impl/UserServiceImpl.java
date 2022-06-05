@@ -3,7 +3,7 @@ package com.nc7.project00.service.impl;
 import com.nc7.project00.entity.User;
 import com.nc7.project00.mapper.UserMapper;
 import com.nc7.project00.service.UserService;
-import com.nc7.project00.vo.UserVo;
+import com.nc7.project00.vo.UserVO;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -25,12 +25,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserVo getUserById(String id) {
+    public UserVO getUserById(String id) {
         return userMapper.getUserById(id);
     }
 
     @Override
-    public UserVo getUserByCredential(String credential) {
+    public UserVO getUserByCredential(String credential) {
         return userMapper.getUserByCredential(credential);
     }
 }

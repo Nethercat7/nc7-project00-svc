@@ -3,7 +3,7 @@ package com.nc7.project00.controller;
 import com.nc7.project00.entity.User;
 import com.nc7.project00.service.UserService;
 import com.nc7.project00.utils.WebResponse;
-import com.nc7.project00.vo.UserVo;
+import com.nc7.project00.vo.UserVO;
 import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,7 +28,7 @@ public class UserController {
 
     @GetMapping("/{id}")
     public WebResponse getUserById(@PathVariable("id") String id) {
-        UserVo user = userService.getUserById(id);
+        UserVO user = userService.getUserById(id);
         if (!ObjectUtils.isEmpty(user)) {
             return new WebResponse(200, user);
         } else {

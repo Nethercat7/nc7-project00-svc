@@ -1,6 +1,6 @@
 package com.nc7.project00.vo;
 
-public class UserVo {
+public class UserVO {
     private String id;
     private String username;
     private String email;

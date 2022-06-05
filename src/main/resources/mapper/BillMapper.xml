@@ -4,9 +4,48 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.nc7.project00.mapper.BillMapper">
+    <resultMap id="billStatsMap" type="com.nc7.project00.vo.BillVO">
+        <result column="id" property="id"/>
+        <result column="tag" property="tag"/>
+        <result column="amount" property="amount"/>
+        <result column="bill_date" property="date"/>
+        <result column="bill_type" property="type"/>
+    </resultMap>
+
     <insert id="add" parameterType="com.nc7.project00.entity.Bill">
         INSERT INTO p00_bills(id, tag, amount, add_username, bill_date, bill_type)
         VALUES (#{params.id}, #{params.tag}, #{params.amount}, #{params.addUsername}, #{params.billDate},
                 #{params.billType})
     </insert>
+
+    <select id="getBillStats" parameterType="java.lang.String" resultMap="billStatsMap">
+        SELECT
+        bill.id,
+        tag.tag,
+        bill.amount,
+        bill.bill_date,
+        bill.bill_type
+        FROM
+        p00_bills bill
+        INNER JOIN p00_tags tag ON bill.tag = tag.id
+        WHERE 1=1
+        <if test="username!='' and username!=null">
+            AND bill.add_username = #{username}
+        </if>
+        <choose>
+            <when test="range=='week'">
+                AND YEARWEEK ( CURDATE(), 1 )= YEARWEEK ( bill.bill_date,1 )
+            </when>
+            <when test="range=='month'">
+                AND MONTH ( CURDATE() )= MONTH ( bill.bill_date )
+            </when>
+            <when test="range=='year'">
+                AND YEAR ( CURDATE() )= YEAR ( bill.bill_date )
+            </when>
+        </choose>
+        <if test="type!='' and type !=null and type !='2'.toString()">
+            AND bill.bill_type = #{type}
+        </if>
+        ORDER BY bill.bill_date
+    </select>
 </mapper>
