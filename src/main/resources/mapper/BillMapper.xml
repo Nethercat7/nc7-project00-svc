@@ -5,7 +5,8 @@
 
 <mapper namespace="com.nc7.project00.mapper.BillMapper">
     <insert id="add" parameterType="com.nc7.project00.entity.Bill">
-        INSERT INTO p00_bills(id, tag, amount, add_username, bill_date)
-        VALUES (#{params.id}, #{params.tag}, #{params.amount}, #{params.addUsername}, #{params.billDate})
+        INSERT INTO p00_bills(id, tag, amount, add_username, bill_date, bill_type)
+        VALUES (#{params.id}, #{params.tag}, #{params.amount}, #{params.addUsername}, #{params.billDate},
+                #{params.billType})
     </insert>
 </mapper>

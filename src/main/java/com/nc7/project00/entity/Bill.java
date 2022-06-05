@@ -10,6 +10,7 @@ public class Bill {
     private String addUsername;
     private String status;
     private Date billDate;
+    private String billType;
 
     public String getId() {
         return id;
@@ -57,5 +58,13 @@ public class Bill {
 
     public void setBillDate(Date billDate) {
         this.billDate = billDate;
+    }
+
+    public String getBillType() {
+        return billType;
+    }
+
+    public void setBillType(String billType) {
+        this.billType = billType;
     }
 }
